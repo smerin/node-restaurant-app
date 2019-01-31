@@ -64,6 +64,8 @@ storeSchema.pre("save", async function(next) {
   next();
 });
 
+// TODO: Add some sanitization for title / description
+
 storeSchema.statics.getTagsList = function() {
   return this.aggregate([
     { $unwind: "$tags" },
